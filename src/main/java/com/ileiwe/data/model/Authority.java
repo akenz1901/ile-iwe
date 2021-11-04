@@ -10,7 +10,7 @@ import java.util.UUID;
 @Entity
 @Data
 @NoArgsConstructor
-public class Authority  implements GrantedAuthority {
+public class Authority {
     @Id
     @GeneratedValue
     private UUID id;
