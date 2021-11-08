@@ -1,2 +1,11 @@
-package com.ileiwe.service.mail;public class MailResponse {
+package com.ileiwe.service.mail;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class MailResponse {
+    private boolean isSuccessful;
+
 }
