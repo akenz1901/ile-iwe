@@ -1,6 +1,7 @@
 package com.ileiwe.controller;
 
 import com.ileiwe.data.dto.InstructorPartyDto;
+import com.ileiwe.service.exception.UserAlreadyExistException;
 import com.ileiwe.service.intructor.InstructorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +15,7 @@ public class RegistrationController {
     private InstructorServiceImpl instructorService;
 
     @PostMapping("/instructor")
-    public ResponseEntity<?> registerAsInstructor(@RequestBody InstructorPartyDto instructorPartyDto){
+    public ResponseEntity<?> registerAsInstructor(@RequestBody InstructorPartyDto instructorPartyDto) throws UserAlreadyExistException {
         return ResponseEntity.ok()
                 .body(instructorService.save(instructorPartyDto));
     }
