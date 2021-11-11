@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.minidev.json.annotate.JsonIgnore;
+import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -15,7 +17,7 @@ import java.util.List;
 @Builder()
 @AllArgsConstructor
 @NoArgsConstructor
-public class Instructor {
+public class Instructor{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,8 +32,11 @@ public class Instructor {
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private String specialization;
+
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.PERSIST)
     private LearningParty learningParty;
+
     @OneToMany(cascade = CascadeType.PERSIST)
     private List<Course> courseList;
 }
