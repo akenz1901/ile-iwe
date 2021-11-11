@@ -1,6 +1,7 @@
 package com.ileiwe.data.model;
 
 import lombok.*;
+import net.minidev.json.annotate.JsonIgnore;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -24,6 +25,7 @@ public class LearningParty {
     @NotNull @NotBlank
     private String email;
     @Column(unique = true, nullable = false)
+    @JsonIgnore
     @NotNull @NotBlank
     private String password;
     private boolean enabled;
@@ -31,6 +33,8 @@ public class LearningParty {
     private LocalDateTime dateCreated;
     @OneToMany(cascade = CascadeType.PERSIST)
     private List<Authority> authorities;
+
+    private String token;
 
     public LearningParty(String email, String password, Authority authority){
 //        if(email.strip().isEmpty() || password.strip().isEmpty()){
