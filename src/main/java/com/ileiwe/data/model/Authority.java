@@ -13,6 +13,7 @@ public class Authority {
     @Id
     @GeneratedValue
     private UUID id;
+
     @Enumerated(EnumType.STRING)
     private Role authority;
 

@@ -12,8 +12,6 @@ Spring RESTFUL APIs while using postman to test the APIs
 
 #Installation
 - STEP 1: Clone repository
-- STEP 2: Install dependencies: cd into root folder run the following command `mvn install`
+- STEP 2: Install dependencies: cd into root folder run the following command `mvn install` then `mvn compile`
 - STEP 3: Setup database: change directory into the db folder
 - STEP 4: Run the project `mvn spring-boot-run`
-
-
